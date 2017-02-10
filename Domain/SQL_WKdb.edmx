@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Domain.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SYS_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="ACCOUNT" Type="varchar" MaxLength="50" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" />
+          <Property Name="ISLOCK" Type="int" />
+          <Property Name="DEPSORT" Type="int" />
+          <Property Name="COMPANYSORT" Type="int" />
+          <Property Name="FACEIMG" Type="varchar" MaxLength="50" />
+          <Property Name="LEVELS" Type="varchar" MaxLength="50" />
+          <Property Name="DEPID" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="CREATEDATE" Type="datetime" />
+          <Property Name="UPDATEUSER" Type="varchar" MaxLength="50" />
+          <Property Name="UPDATEDATE" Type="datetime" />
+          <Property Name="LASTLOGIP" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DomainStoreContainer">
+          <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Domain" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SYS_USER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ACCOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISLOCK" Type="Int32" />
+          <Property Name="DEPSORT" Type="Int32" />
+          <Property Name="COMPANYSORT" Type="Int32" />
+          <Property Name="FACEIMG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LEVELS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CREATEDATE" Type="DateTime" Precision="3" />
+          <Property Name="UPDATEUSER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPDATEDATE" Type="DateTime" Precision="3" />
+          <Property Name="LASTLOGIP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SYS_USER" EntityType="Self.SYS_USER" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DomainStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="SYS_USER">
+            <EntityTypeMapping TypeName="Domain.SYS_USER">
+              <MappingFragment StoreEntitySet="SYS_USER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="ISLOCK" ColumnName="ISLOCK" />
+                <ScalarProperty Name="DEPSORT" ColumnName="DEPSORT" />
+                <ScalarProperty Name="COMPANYSORT" ColumnName="COMPANYSORT" />
+                <ScalarProperty Name="FACEIMG" ColumnName="FACEIMG" />
+                <ScalarProperty Name="LEVELS" ColumnName="LEVELS" />
+                <ScalarProperty Name="DEPID" ColumnName="DEPID" />
+                <ScalarProperty Name="CREATEUSER" ColumnName="CREATEUSER" />
+                <ScalarProperty Name="CREATEDATE" ColumnName="CREATEDATE" />
+                <ScalarProperty Name="UPDATEUSER" ColumnName="UPDATEUSER" />
+                <ScalarProperty Name="UPDATEDATE" ColumnName="UPDATEDATE" />
+                <ScalarProperty Name="LASTLOGIP" ColumnName="LASTLOGIP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
