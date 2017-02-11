@@ -37,5 +37,10 @@ namespace NewTest.Controllers
             //List<Models.USERINFO> list1 = (from p in db.USERINFOes where p.infoId == 123 select p).ToList();
             return Content(id);
         }
+
+        public String GetUserId()
+        {
+            return "";
+        }
     }
 }
