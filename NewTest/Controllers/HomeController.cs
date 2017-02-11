@@ -9,9 +9,6 @@ namespace NewTest.Controllers
 {
     public class HomeController : Controller
     {
-        //创建数据库上下文类的对象  
-        FordTestEntities db = new FordTestEntities();
-
         public ActionResult Index()
         {
             return View();
